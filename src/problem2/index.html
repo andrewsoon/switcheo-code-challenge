@@ -1,29 +1,119 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="This is a fancy form for Switcheo" />
+    <!-- Favicon -->
+    <link href="assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesom Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow”
+    rel=”stylesheet”
+    integrity=”sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm”
+    crossorigin=”anonymous”>
 
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
-</head>
+    <!-- You may add more stuff here -->
+    <link href="style.css" rel="stylesheet" />
 
-<body>
+    <title>Fancy Form</title>
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo" src="assets/switcheo-logo.png" width="250px" />
+      <nav>
+        <a href="#"><h3>Navlink 1</h3></a>
+        <a href="#"><h3>Navlink 2</h3></a>
+        <a href="#"><h3>Navlink 3</h3></a>
+      </nav>
+      <div class="mobile">
+        <a href="#" onclick="openNav()">
+          <i class="fas fa-bars fa-2x"></i>
+        </a>
+      </div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="#"><h3>Navlink 1</h3></a>
+        <a href="#"><h3>Navlink 2</h3></a>
+        <a href="#"><h3>Navlink 3</h3></a>
+      </div>
+    </div>
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
+    <div class="container">
+      <h1>Send ETH Tokens</h1>
 
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+      <div class="form-container">
+        <form onsubmit="return !1" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="input-address">ETH Address</label>
+            <input
+              id="input-address"
+              class="form-control"
+              aria-describedby="ethaddresshelp"
+              pattern="(0x){1}[A-Fa-f0-9]{40}"
+              required
+            />
+            <small id="ethaddresshelp" class="form-text text-muted">
+              Your Ethereum address, should be a prefix of "0x" followed by 40
+              characters (0-9, A-F, a-f) <br /><span class="sampleAddress"
+                >e.g. "0x71C7656EC7ab88b098defB751B7401B5f6d8976F"</span
+              >
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="input-amount">Amount to send (Gwei)</label>
+            <input
+              id="input-amount"
+              class="form-control"
+              aria-describedby="ethamounthelp"
+              pattern="[1-9]{1}[0-9]{1,10}"
+              required
+            />
+            <small id="ethamounthelp" class="form-text text-muted"> </small>
+          </div>
+          <div class="form-group">
+            <label for="input-otp">OTP Authentication</label>
+            <input
+              type="number"
+              id="input-otp"
+              class="form-control"
+              placeholder="Enter the 6-digit OTP sent to your phone."
+              pattern="[0-9]{6}"
+              min="0"
+              required
+            />
+          </div>
+          <button class="btn btn-primary" type="submit">SEND TOKENS</button>
+        </form>
+      </div>
+    </div>
+    <img class="background-globe" src="assets/background-globe.png" />
+    <div class="footer">Footer Content</div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
 
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
-
-    <button>SEND TOKENS</button>
-  </form>
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
