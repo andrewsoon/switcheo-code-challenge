@@ -1,8 +1,179 @@
 body {
+  min-width: 360px;
+  max-width: 1440px;
+  margin: auto;
+  font-family: Roobert, Roobert-SemiBold, Roobert-Medium, IBM Plex Mono, Inter,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #4c4c4c;
+}
+
+.header {
+  margin: 30px;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.mobile {
+  display: none;
+  visibility: none;
+  height: 60px;
+  padding: 0px 20px;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-align: left;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 1.5em;
+  margin-left: 50px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+nav a {
+  color: #193b4d;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #4c4c4c;
+  text-decoration: underline;
+}
+
+h3 {
+  margin: 10px;
+  font-size: 1em;
+}
+
+.container {
   min-width: 360px;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 30px auto 130px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+h1 {
+  color: #193b4d;
+  font-size: 2.5em;
+}
+
+.form-container {
+  width: 80%;
+  min-height: 400px;
+  background-color: #f4f9fd;
+  margin: 10px;
+  padding: 30px 60px;
+  box-shadow: 5px 9px 13px 0px #8787875c;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #193b4d;
+  border: #193b4d;
+  font-weight: 500;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #e2fca4;
+  color: #193b4d;
+}
+
+.background-globe {
+  min-width: 300px;
+  position: fixed;
+  left: -100px;
+  bottom: -250px;
+  z-index: -1;
+}
+
+.footer {
+  width: 100%;
+  background-color: #193b4d;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+@media only screen and (max-width: 786px) {
+  nav {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mobile {
+    display: flex;
+    visibility: visible;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2em;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  #ethaddresshelp {
+    font-size: 0.8em;
+  }
+
+  .sampleAddress {
+    font-size: 0.7em;
+  }
 }
