@@ -160,6 +160,11 @@ label {
     justify-content: flex-end;
     align-items: center;
   }
+
+  .fas {
+    color: #193b4d;
+  }
+
   h1 {
     font-size: 2em;
   }
